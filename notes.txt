@@ -1,8 +1,0 @@
-1. manage.py
-    - Generally won't change this file
-
-2. settings.py
-    - settings of the project 
-
-3. urls.py 
-    - table of contents that all my application is going to visit 
