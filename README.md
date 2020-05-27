@@ -1,5 +1,12 @@
 # Tutorial Guide
 
+## Basic setup 
+- Must have Python installed
+```
+pip install Django
+django-admin startproject PROJECT_NAME
+```
+
 ## Structure
 - One project has multiple applicatons
 - Define all the urls from this big file 
@@ -25,5 +32,10 @@ Create a new app
 ```
 python manage.py startapp hello
 ```
-Add hello under installed apps in settings.py
+Add hello under installed apps in settings.py inside django_basics
 
+### Managing applications
+1. views.py
+    - File where the user will see
+2. urls.py
+    - Create urls.py where it will keep track of all the urls of this project 
