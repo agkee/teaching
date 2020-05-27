@@ -39,3 +39,4 @@ Add hello under installed apps in settings.py inside django_basics
     - File where the user will see
 2. urls.py
     - Create urls.py where it will keep track of all the urls of this project 
+    - Try adding more paths 
