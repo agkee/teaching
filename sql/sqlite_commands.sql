@@ -23,3 +23,19 @@ SELECT origin, destination FROM flights;
 SELECT * 
 FROM flights
 WHERE id = 1; 
+
+SELECT * FROM flights WHERE duration > 500 OR destination = "Paris"; 
+
+-- Wild card of %, where there is an a 
+SELECT * FROM flights WHERE origin LIKE "%a%"; 
+
+-- Update
+UPDATE flights 
+SET duration = 430 
+WHERE origin = "New York" 
+AND destination = "London"; 
+
+-- Delete (LIMIT, ORDER BY, GROUP BY, HAVING) 
+DELETE FROM flights WHERE destination = "Incheon"
+
+-- Joining tables 
