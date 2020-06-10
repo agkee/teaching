@@ -7,4 +7,5 @@ urlpatterns = [
     path("jeff", views.jeff, name="Jeff"),
     # Accepts any string with its parameter in name 
     path("<str:name>", views.greet, name="greet"),
+    path("calculator/<int:first>/<int:second>", views.calculator, name="calculator"),
 ]

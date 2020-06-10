@@ -11,3 +11,6 @@ def jeff(request):
 
 def greet(request, name):
     return HttpResponse(f"Hello {name.capitalize()}")
+
+def calculator(request, first, second):
+    return HttpResponse(first + second)
