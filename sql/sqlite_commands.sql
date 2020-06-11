@@ -38,4 +38,11 @@ AND destination = "London";
 -- Delete (LIMIT, ORDER BY, GROUP BY, HAVING) 
 DELETE FROM flights WHERE destination = "Incheon"
 
--- Joining tables 
+-- Join 
+-- Inner join: Match on both sides 
+-- Left outer join: Only on the left side
+-- Right outer join: Only on the right side
+-- Outer join: Both 
+SELECT first_name, origin, destination 
+FROM flights JOIN passengers 
+ON passengers.flight_id = flights.id; 

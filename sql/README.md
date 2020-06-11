@@ -20,6 +20,8 @@
 3. Formatting
    - .mode columns
    - .headers yes
+4. Exit
+   - ctrl + d
 
 ## MySQL
 1. Datatypes
