@@ -1,0 +1,12 @@
+{% extends "schools/layout.html" %}
+<!-- Much easier way using forms library in django -->
+{% block body %}
+  <h1>Add a new school!</h1>
+  <form action="{% url 'schools:addSchoolLibrary' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+  </form>
+  <br>
+  <a href="{% url 'schools:index' %}">See all schools</a>
+{% endblock %}

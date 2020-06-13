@@ -34,6 +34,11 @@ python manage.py startapp hello
 ```
 Add hello under installed apps in settings.py inside django_basics
 
+Migrate tables 
+```
+python manage.py migrate
+```
+
 ### Managing applications
 1. views.py
     - File where the user will see
