@@ -11,12 +11,17 @@ class NewSchoolForm(forms.Form):
 
 # Create your views here.
 def index(request): 
-    return render(request, "schools/index.html", {
-        "schools": schools
-    })
     # if "schools" not in request.session: 
     #     request.session["schools"] = []
 
+    return render(request, "schools/index.html", {
+        "schools": schools,
+        # "schools": request.session["schools"]
+    })
+
+
+# Will throw error and should run python manage.py migrate because we have to initialize table
+# For request.session
     # return render(request, "schools/index.html", {
     #     "schools": request.session["schools"]
     # })
@@ -25,19 +30,20 @@ def addSchool(request):
     return render(request, "schools/addSchool.html")
 
 def addSchoolLibrary(request): 
+    # When the incoming request is POST method
     if request.method == "POST": 
         form = NewSchoolForm(request.POST) 
         if form.is_valid(): 
             school = form.cleaned_data["school"] 
             schools.append(school)
-            # with session
-            request.session["schools"] += [school]
+            # request.session["schools"] += [school]
             return HttpResponseRedirect(reverse("schools:index"))
         else: 
             return render(request, "schools/addSchool.html", {
                 "form": form
             })
 
+    # When the incoming request is GET method
     return render(request, "schools/addSchoolLibrary.html", {
         "form": NewSchoolForm()
     })
