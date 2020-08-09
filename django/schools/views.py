@@ -49,8 +49,10 @@ def addSchoolLibrary(request):
 
 def deleteSchool(request): 
     print(request.session["schools"])
-    if request.method == "DELETE":
-        print("Hmm")
-        del request.session["schools"]
-        return HttpResponseRedirect(reverse("schools:index"))
-    return HttpResponse("Deleted last element")
+    # if request.method == "DELETE":
+    #     print("Hmm")
+    #     del request.session["schools"]
+    #     return HttpResponseRedirect(reverse("schools:index"))
+    # return HttpResponse("Deleted last element")
+    del request.session["schools"]
+    return HttpResponseRedirect(reverse("schools:index"))
