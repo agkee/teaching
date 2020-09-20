@@ -1,3 +1,4 @@
+// @ts-nocheck
 const form = document.getElementById("form");
 
 let requestUrl = "https://nba-players.herokuapp.com/";
@@ -16,4 +17,10 @@ async function getPlayerImage(firstName, lastName) {
   const data = await res.blob();
   const imgURL = URL.createObjectURL(data);
   document.querySelector("img").src = imgURL;
+}
+
+async function ha() {
+  const a = await fetch("http://localhost:5000");
+  console.log(a);
+  document.getElementById("results").innerHTML = a.text();
 }
