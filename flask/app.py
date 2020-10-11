@@ -3,6 +3,7 @@ from PIL import Image
 import base64
 from io import BytesIO
 from flask_cors import CORS
+from convert import convert
 
 # create an instance of a Flask class
 # First argument is the name of the application's module or package
@@ -26,12 +27,15 @@ def hello_world():
 @app.route('/upload', methods=['POST', 'OPTIONS'])
 def upload():
     f = request.files['file']
-    print(f)
     img = Image.open(f)
+
+    img = convert(img)
+
     img_io = BytesIO()
     img.save(img_io, 'jpeg')
     img_io.seek(0)
 
+    # response = make_response(send_file(img_io, mimetype='image/jpeg'))
     response = make_response(send_file(img_io, mimetype='image/jpeg'))
     response.headers['Access-Control-Allow-Origin'] = '*'
     return response

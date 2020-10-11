@@ -42,32 +42,3 @@ async function send_image(aa) {
   const imgURL = URL.createObjectURL(data);
   document.querySelector("img").src = imgURL;
 }
-
-// const imageUpload = document.getElementById("imageUpload");
-
-// imageUpload.onsubmit = (e) => {
-//   e.preventDefault();
-//   console.log(imageUpload.img.value);
-
-//   fetch("http://localhost:5000/upload", {
-//     // Adding method type
-//     method: "POST",
-
-//     // Adding body or contents to send
-//     body: JSON.stringify({
-//       title: "foo",
-//       body: "bar",
-//       userId: 1,
-//     }),
-
-//     // Adding headers to the request
-//     headers: {
-//       "Content-type": "image/jpeg;",
-//     },
-//   })
-//     // Converting to JSON
-//     .then((response) => response.json())
-
-//     // Displaying results to console
-//     .then((json) => console.log(json));
-// };
