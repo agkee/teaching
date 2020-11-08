@@ -7,11 +7,11 @@ from convert import convert
 
 # create an instance of a Flask class
 # First argument is the name of the application's module or package
-app = Flask(__name__)
-CORS(app)
+application = Flask(__name__)
+CORS(application)
 
 
-@app.route('/test', methods=['GET', 'POST'])
+@application.route('/test', methods=['GET', 'POST'])
 # Set router for the url
 def hello_world():
     a = {}
@@ -24,7 +24,7 @@ def hello_world():
     return a
 
 
-@app.route('/upload', methods=['POST', 'OPTIONS'])
+@application.route('/upload', methods=['POST', 'OPTIONS'])
 def upload():
     f = request.files['file']
     img = Image.open(f)
