@@ -5,9 +5,7 @@ import (
 	"net/http"
 )
 
-//go mod init (git link)
-
-// An API server that can handle CRUD (Create, Read, Update, Delete) (POST, GET, PUT, DELETE) operations for books
+// go mod init (git link)
 
 // Downloading external libraries from the directory
 // Air: go get -u github.com/cosmtrek/air
